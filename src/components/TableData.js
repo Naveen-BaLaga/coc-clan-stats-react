@@ -10,11 +10,31 @@ const TableData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const cachedData = localStorage.getItem(tableName);
+
+        if (cachedData) {
+          const { payload, updateTimestamp } = JSON.parse(cachedData);
+          const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
+          const currentTime = new Date().getTime();
+
+          if (currentTime - updateTimestamp < oneDayInMilliseconds) {
+            console.log('Data from cache!');
+            setTableData(payload);
+            return;
+          }
+        }
+
         const response = await fetch(`http://127.0.0.1:5000/get-tables?table-name=${tableName}`);
         const data = await response.json();
 
         if (data.status === 'Success') {
+          console.log('Data from API!');
           setTableData(data.payload);
+
+          // Cache the data
+          const updateTimestamp = new Date().getTime();
+          const cachedData = { payload: data.payload, updateTimestamp };
+          localStorage.setItem(tableName, JSON.stringify(cachedData));
         } else {
           setError(data.error || 'Error fetching data');
         }

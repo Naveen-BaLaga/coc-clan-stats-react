@@ -1,12 +1,18 @@
-// Each component file structure (e.g., Dashboard.js)
 import React from 'react';
+import './Tables.css';
 
 const Tables = () => {
   return (
     <div>
       <main className="page-content">
-        {/* Your component content goes here */}
-        <p>Tables Page under development</p>
+        <h2 className="tables-heading">List of Tables</h2>
+        <div className="tables-list">
+          <ul>
+            <div className="table-entry">Highest Multiplayer Battles Won</div>
+            <div className="table-entry">Highest Barbarian King Level</div>
+            <div className="table-entry">Highest Archer Queen Level</div>
+          </ul>
+        </div>
       </main>
     </div>
   );

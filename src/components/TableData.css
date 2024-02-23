@@ -1,0 +1,13 @@
+.page-content {
+    margin: 20px;
+}
+  
+.go-back-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+  

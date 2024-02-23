@@ -1,0 +1,30 @@
+/* .page-wrapper {
+    margin: 30px;
+  }
+  
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    border: 1px solid white;
+    flex: 1
+}
+
+.filler-column {
+    display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2
+}
+
+.text-field {
+    background-color: #333;
+    height: 100px;
+} */

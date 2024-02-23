@@ -16,6 +16,7 @@ import ClanWarLeague from './components/ClanWarLeague';
 import Wars from './components/Wars';
 import Tables from './components/Tables';
 import About from './components/About';
+import TableData from './components/TableData';
 
 // App component
 function App() {
@@ -61,6 +62,7 @@ function App() {
             <Route path="/clanwarleague" component={ClanWarLeague} />
             <Route path="/wars" component={Wars} />
             <Route path="/tables" component={Tables} />
+            <Route path="/tableData/:tableName" component={TableData} />
             <Route path="/about" component={About} />
           </Switch>
         </main>
